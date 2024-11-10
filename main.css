@@ -1,0 +1,255 @@
+*{
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Libre Baskerville';
+}
+
+.wrapper {
+  transition: background 1s ease;
+  width: auto;
+  display: grid;
+  grid-gap: 0;
+/*   grid-template-columns: 4fr; */
+  grid-template-areas:
+    "header_area header_area header_area"
+    "article_area article_area article_area"
+    "footer_area footer_area footer_area";
+}
+
+header {
+  grid-area: header_area;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1522050212171-61b01dd24579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80);
+  background-size: cover;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.head-text {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  text-align: center;
+  color: white;
+  font-size: 6vw;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4)
+}
+.fas {
+  margin: 1em;
+  position: relative;
+}
+
+.fas:hover {
+  animation: mymove 2s infinite;
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 40px;}
+}
+.side-nav{
+  list-style-type: none;
+  position: fixed;
+  display: block;
+  right: 50px;
+  top: 40%; 
+  z-index: 90;
+  border: none;
+}
+
+nav a {
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    display: block;
+    margin-bottom: 10px;
+    width: 2vw;
+    height: 2.4vh;
+    overflow: hidden;
+}
+
+.head-button {
+  position: absolute;
+  left: 60%;
+  top: 8%;
+}
+
+button {
+  display: inline-block;
+  color: white;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 3px; 
+  padding: 15px 32px;
+  margin:0 0 1em;
+  font-size: 14px;
+  width: 125px;
+}
+/* website: http://www.pascalvangemert.nl/ rgba(255,255,255,0)*/
+button a:hover {
+/*   background-color: #fafafa; */
+  color: black;
+}
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+img {
+  display: flex;
+  width:200px;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle;
+  margin-right: 40px;
+}
+article {
+  position: relative;
+  grid-area: article_area;
+  display: block;
+} 
+
+p, li, label {
+  font-family: 'Montserrat', sans-serif;
+}
+.bg {
+  height: 100vh;
+}
+.b1 {
+  background: #cee0e3;
+}
+
+.b2 {
+  background: #94b4bf;
+}
+
+.b3 {
+  background: #4f94b0;
+}
+.section {
+  width: 100vw;
+  align-content: center;
+  padding: 1em;
+  scroll-snap-type: y proximity;
+} 
+
+.b4 {
+  background: #86a6b4;
+  height: 100vh;
+}
+.calendar {
+/*   border-radius: 3%; */
+  float: left;
+  height: auto;
+  width: 50vw;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+/*  use @media-queries to change size  */
+}
+ul {
+  list-style-type:none;
+  height: auto;
+  padding-left: 0;
+  margin: 1em;
+}
+.cal-head span {
+  display: inline-block;
+}
+.icon-left::before {
+  content: "\2227";
+  transform: rotate(90deg);
+}
+.month {
+/*   text-transform: uppercase; */
+  list-style-type: none;
+  text-align: center;
+  height: 1.5em;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.icon-right::after {
+  content:"\2227";
+  transform: rotate(-90deg);
+}
+.weekdays {
+  margin: 0;
+  padding-left: 3px;
+  background-color: #ddd;
+}
+.weekdays li {  
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  height: 30px;
+  width: 13%;
+  font-size: 15px;
+}
+.days {
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+}
+.days li {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 1.5em;
+  margin: 0;
+  /*border: 1px solid gray;*/
+  padding-top: 0.8em;
+}
+.days li:hover, .days li:active {
+  background-color: #86a6b4;
+  border: 0;
+  border-radius: 50%;
+  
+}
+
+.days li:first-child {
+  grid-column: 4;
+} 
+/* display none for problematic days */
+.schedule {
+  float: right;
+  width: 40%;
+  background: white;
+  
+}
+.schedule ul {
+  border: none;
+  list-style-type: square;
+  
+}
+.schedule li {
+  
+}
+.b5 {
+  background: #e5e8e8;
+}
+.contact {
+/*   display: flex; */
+  border: 1px solid black;
+  width: 375px;
+  height: 60vh;
+  margin: auto;
+  margin-top: 8%;
+  text-align: center;
+  overflow: auto;
+}
+
+footer {
+  position: relative;
+  grid-area: footer_area;
+  width: 100vw;
+  height: auto;
+  color: white;
+  background-color: #04202c;
+  text-align: center;
+}
