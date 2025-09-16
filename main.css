@@ -62,16 +62,15 @@ header {
   border: none;
 }
 
+.fa-star {
+  color: white;
+}
+
 nav a {
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-    display: block;
     margin-bottom: 10px;
     width: 2vw;
     height: 2.4vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .head-button {
